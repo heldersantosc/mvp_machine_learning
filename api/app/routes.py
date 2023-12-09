@@ -1,11 +1,10 @@
 from flask import Flask, request, jsonify
-import pickle
+from app.models import ObesityModel
 
 app = Flask(__name__)
 
-# Carrega o modelo com pickle
-with open("app/classificador_obesidade.pkl", "rb") as file:
-    model = pickle.load(file)
+# Instancia a classe ObesityModel
+model = ObesityModel("app/classifier_model.pkl", "app/standard_scaler.pkl")
 
 
 @app.route("/predict", methods=["POST"])
@@ -13,12 +12,10 @@ def predict():
     try:
         # Recebe os dados do POST em formato JSON
         data = request.get_json()
-
-        # Faz a previsão usando o modelo carregado
-        prediction = model.predict([data])
+        prediction = model.predict(data)
 
         # Retorna a previsão como JSON
-        return jsonify({"prediction": prediction.tolist()})
+        return jsonify(prediction)
     except Exception as e:
         return jsonify({"error": str(e)})
 
