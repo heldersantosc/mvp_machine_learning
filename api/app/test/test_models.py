@@ -1,7 +1,7 @@
 from app.models import ObesityModel
 
-model_path = "app/classifier_model.pkl"
-scaler_path = "app/standard_scaler.pkl"
+model_path = "app/ml/classifier_model.pkl"
+scaler_path = "app/ml/standard_scaler.pkl"
 
 # Dados de exemplo para teste
 test_data = {

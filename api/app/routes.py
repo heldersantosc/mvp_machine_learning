@@ -4,7 +4,7 @@ from app.models import ObesityModel
 app = Flask(__name__)
 
 # Instancia a classe ObesityModel
-model = ObesityModel("app/classifier_model.pkl", "app/standard_scaler.pkl")
+model = ObesityModel("app/ml/classifier_model.pkl", "app/ml/standard_scaler.pkl")
 
 
 @app.route("/predict", methods=["POST"])

@@ -37,3 +37,8 @@ Este é um guia passo a passo para iniciar um projeto Flask usando uma virtual e
     ```bash
     # Linux/Mac
     python run.py
+
+5. **Execute a api:**
+    ```bash
+    # Linux/Mac
+    pytest
