@@ -32,3 +32,8 @@ Este é um guia passo a passo para iniciar um projeto Flask usando uma virtual e
 3. **Instale as dependências:**
     ```bash
     pip install -r requirements.txt
+
+4. **Execute a api:**
+    ```bash
+    # Linux/Mac
+    python3 run.py
