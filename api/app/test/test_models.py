@@ -14,8 +14,10 @@ test_data = {
 
 
 def test_predict_valid_output():
+    # Cria a instância do Modelo
     model = ObesityModel(model_path, scaler_path)
 
+    # Executa o predict
     result = model.predict(test_data)
     assert isinstance(result, dict)
     assert "prediction" in result
@@ -24,8 +26,10 @@ def test_predict_valid_output():
 
 
 def test_predict_with_test_data():
+    # Cria a instância do Modelo
     model = ObesityModel(model_path, scaler_path)
 
+    # Executa o predict
     result = model.predict(test_data)
     assert isinstance(result, dict)
     assert "prediction" in result
