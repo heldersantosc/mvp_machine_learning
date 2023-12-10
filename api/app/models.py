@@ -6,7 +6,7 @@ import pickle
 
 class ObesityModel:
     def __init__(self, model_url, scaler_url):
-        self.attributes = ["Age", "Gender", "Height", "Weight", "BMI"]
+        self.attributes = ["age", "gender", "height", "weight", "bmi"]
 
         with open(model_url, "rb") as file:
             self.model = pickle.load(file)
@@ -43,3 +43,17 @@ class ObesityModel:
             return {"prediction": prediction_response}
         except Exception as e:
             return {"error": str(e)}
+
+
+class BMI_Calculator:
+    @staticmethod
+    def calculate_batch(weights_kg, heights_cm):
+        bmis = []
+        for weight, height in zip(weights_kg, heights_cm):
+            # Convertendo altura para metros
+            height_m = height / 100
+
+            # Fórmula do BMI: peso / (altura * altura)
+            bmi = round(weight / (height_m * height_m), 2)
+            bmis.append(bmi)
+        return bmis

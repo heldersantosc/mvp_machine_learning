@@ -7,11 +7,11 @@ def test_predict_route():
 
     # Dados de teste no formato JSON
     test_data = {
-        "Age": [25],
-        "Gender": [0],
-        "Height": [155],
-        "Weight": [53],
-        "BMI": [22.94],
+        "age": [25],
+        "fender": [0],
+        "height": [155],
+        "weight": [53],
+        "bmi": [22.94],
     }
 
     # Envia uma solicitação POST para a rota /predict

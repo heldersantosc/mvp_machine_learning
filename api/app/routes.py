@@ -1,7 +1,11 @@
 from flask import Flask, request, jsonify
-from app.models import ObesityModel
+from flask_cors import CORS
+
+from app.models import BMI_Calculator, ObesityModel
+
 
 app = Flask(__name__)
+cors = CORS(app)
 
 # Instancia a classe ObesityModel
 model = ObesityModel("app/ml/classifier_model.pkl", "app/ml/standard_scaler.pkl")
@@ -12,6 +16,9 @@ def predict():
     try:
         # Recebe os dados do POST em formato JSON
         data = request.get_json()
+
+        data["bmi"] = BMI_Calculator.calculate_batch(data["weight"], data["height"])
+
         prediction = model.predict(data)
 
         # Retorna a previsão como JSON
