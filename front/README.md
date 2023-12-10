@@ -10,8 +10,8 @@ Este é um projeto básico que utiliza React para criar um formulário simples e
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/heldersantosc/react-data-sender.git
-   cd react-data-sender
+   git clone https://github.com/heldersantosc/mvp_machine_learning.git
+   cd mvp_machine_learning/front
 
 2. **Instale as dependências:**
     ```bash
