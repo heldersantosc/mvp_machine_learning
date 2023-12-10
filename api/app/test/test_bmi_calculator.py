@@ -6,7 +6,7 @@ def test_bmi_calculator_single_input():
     weight = [70]
     height = [170]
 
-    expected_bmi = [24.221453287197235]
+    expected_bmi = [24.22]
 
     bmi_calculator = BMI_Calculator()
     calculated_bmi = bmi_calculator.calculate_batch(weight, height)
@@ -20,9 +20,9 @@ def test_bmi_calculator_multiple_inputs():
     heights = [170, 180, 190]
 
     expected_bmis = [
-        24.221453287197235,
-        24.691358024691358,
-        24.930747922437675,
+        24.22,
+        24.69,
+        24.93,
     ]
 
     bmi_calculator = BMI_Calculator()
